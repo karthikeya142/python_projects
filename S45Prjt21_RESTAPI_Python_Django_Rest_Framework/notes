@@ -1,0 +1,71 @@
+ API stands for application programmable interface and an API is nothing, but it's something which
+allows us to communicate with a database or a third party websites database.
+
+ the next question is why do you use Django rest framework when we could just use Django?
+ A Django app could fetch data from the database and it could work with that data very well.
+ the need to actually create an API in the first place in case of Django applications?
+ the reason for that is service oriented architecture.
+  service oriented architecture is a way of architecting your app in such a way that the back end is
+  completely separated from the front end.
+ what exactly is service oriented architecture looks like.
+
+                    frontend
+
+                    integration layer
+
+         booking api        payments api            map api
+
+                    databse layer
+
+
+  the major advantages of using a service oriented architecture means that if one of the service
+  fails, the rest of them are not affected by the other.
+ advantage of actually using a service oriented architecture is that you could have a flexibility
+ of choice when you're choosing technologies for front end.
+
+
+understand service oriented architecture, let's take a look at the Django rest framework.
+ what exactly is a Django rest framework?
+ Django Rest Framework is a third party app and it actually adds functionality to Django.
+ Django app running with everything in it.
+ Provides us additional functionality to that particular application and it can transform any Django application into an API.
+
+
+
+how to install the Django Rest framework for creating APIs in Django.
+first we need to set up venv env
+pip install venv env
+
+to install Django rest framework, you need to type
+pip install  Djangorestframework
+
+677. Creating & Setting Up Django App
+
+Creating A Django Project Open cmd
+
+  django-admin startproject mysite
+create a first Django app inside the mysite .
+
+django-admin startapp myapp
+Running Django Project On Localhost
+
+python manage.py runserver
+the process of creating tables out of a Django model is called as making migrations.
+
+python manage.py makemigrations
+
+create those tables, you need to type in another command.
+
+python manage.py migrate
+
+I run these commands now, the database table would be created from this model here,
+
+
+create an admin user for our website so that we could add some dummy data
+
+python manage.py createsuperuser
+
+Username (leave blank to use 'admin'): admin
+Email address: admin@gmail.com
+password: admin123
+now run the server python manage.py runserver

@@ -1,0 +1,18 @@
+import { v2 as cloudinary } from 'cloudinary';
+
+(async function() {
+
+    // Configuration
+    cloudinary.config({
+        cloud_name: 'dgniahe1w',
+        api_key: '244622891395245',
+        api_secret: '<your_api_secret>' // Click 'View Credentials' below to copy your API secret
+    });
+
+
+CLOUDINARY_CLOUDNAME =
+CLOUDINARY_KEY=
+CLOUDINARY_SECRET=
+MAPBOX_TOKEN=
+DB_URL=
+SECRET=

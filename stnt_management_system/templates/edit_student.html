@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Edit Student</h1>
+    <form method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ student[1] }}" required><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="{{ student[2] }}" required><br>
+        <input type="submit" value="Update Student">
+    </form>
+    <a href="{{ url_for('display_students') }}">Back to Students List</a>
+</body>
+</html>

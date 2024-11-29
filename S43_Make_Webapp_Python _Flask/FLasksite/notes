@@ -1,0 +1,186 @@
+633. Introduction To Flask
+Flask is actually a Python framework, which is based on Python means that it's actually written in Python.
+ even if you want to use flask, you need to write Python code.
+
+what is flask used for?
+
+So flask as it's a web framework, it could be used to build web applications. it  could be used to design websites as well.
+But most preferably, Flask is used to design lightweight web applications and for building APIs for
+
+
+compare Flask with one of the most popular Python frameworks, which is Django.
+
+Flask is actually a younger framework. Django is a much older framework.
+both Flask and Django have their own benefits.
+They have their own superpowers and you cannot actually compare them.
+
+understand that flask is a micro framework.
+flask is a framework or a minimalist framework which gives you the tools to get started or to build websites.
+But it's not a fully fledged framework like Django.
+
+t flask is a micro framework, whereas Django is a full stack framework because it
+Django have certain builtin authentication mechanism
+Whereas in case of Flask, you don't have certain authentication mechanisms built into flask.
+Instead you could use any authentication mechanisms which you think are correct.
+So in that particular aspect, Flask is much more flexible.
+
+
+Django follows design patterns, so Django follows design patterns means there are certain ways to do certain things.
+Dajango has follow lot of rules However, Flask does not impose any such rules on how to do certain things.
+
+good thing because Flask provides us with the flexibility to do things our very own way.
+However, the bad thing about this is that as flask makes us free to do whatever we want, it's more
+likely that we will commit some mistakes and we won't follow certain design patterns.
+
+comparison between Flask and Django is like Django is like a fixed menu meal,
+ whereas flask is like a buffet where we can eat anything which we want to.
+
+Now the question is which framework to choose for your project.
+
+if you're building a small web applications, like if you are building
+a simple blog or a personal website that might need to accept some data and process some data, or if building APIs for your website.
+Now in that particular case, you could go with Flask because obviously you don't need all the features of Django in that particular case.
+
+if you are building a personal portfolio site, a Django is actually overkill for building that because you won't be using all.
+ go with flask you want to do some data processing, like accepting form data, you could simply do
+
+ discuss about building complex web applications.
+ if you are developing e-commerce websites or an ERP software or a large scale application like social media platform,
+ then in that particular case, you could go with Django and you could go as well Flask
+
+ But the thing is, Django has so much functionality out of the box that it's actually better to go with
+ Django in case of complex web applications as all the design patterns would be followed and you will
+  utilize the power of Django while building those complex web applications.
+
+If you are building a project which needs to integrate with a ton of other technologies or a ton of other frameworks.
+in that particular case, you would want to choose a framework which offers you the flexibility and it imposes no restrictions.
+
+
+Now if you go with Django, sure, Django does have a certain feature set, but it's not as flexible as flask with flask.
+ that you could use any authentication mechanism, you could use any templating enigne
+
+ when it comes to flexibility, the choice of framework would always be flask.
+
+
+
+ 634. Installing Flask
+virtual environment, install Flask:
+```sh
+pip install Flask
+```
+Flask is installed correctly, run:
+flask --version
+
+635. Hello world
+ order to create a flask application, first of all, you obviously need to go ahead and import Flask
+We use classes to create objects or instances. e are going to create an instance for the flask over here.
+any application which you create is going to be the instance of this particular class, which is
+
+app =Flask(__name__)  Flask to determine the location of this application.
+
+636. Routing
+@app.route('/new')
+def new():
+    return "<h1> now i am learning flask frame work </h1>"
+ routing is nothing but creating a function which returns a value and using a decorator over hereto handle a very specific URL
+
+637. Variables
+ using variables in our Flask application.
+
+ the solution to this problem is that you make this particular part of the URL as dynamic using variables
+
+here is creating variable for rouitng different users
+----------------
+from flask import Flask
+app =Flask(__name__)
+
+variable is string
+@app.route('/profile/<username>')
+def profile(username):
+    return '<h1> this is home page for %s </h1>' % username
+app.run()
+-------------
+here variable is id
+
+from flask import Flask
+app =Flask(__name__)
+@app.route('/profile/<int:id>')
+def profile(id):
+    return '<h1> this is home page for %d </h1>' % id
+app.run()
+----------------
+
+638. Debug Mode
+
+whenever we make any changes to our code over here in flask, in order for those changes to be reflected up over here inside the browser,
+ what you need to do is that you always need
+to go ahead and restart your server. this is actually a tedious process and doing this is not really good because every time you make
+a minor change, in order for that change to be reflected over here, you have to restart the server.
+
+So in order to avoid this issue we use something which is called as the debug mode.
+let's first learn how to set the debug mode on in our Flask application
+
+So over here inside app dot run, you simply need to say debug and you need to set this parameter to true
+app.run(debug=True)
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 106-662-683
+
+technically is that flask development server, which we are using right now to run our
+applications, actually has something which is called as a reloader and a debugger.
+ these two are the modules which are present in the development server.
+ ---
+ app=Flask(__name__)
+ @app.route('/profile/<int:id>')
+def profile(id):
+    return '<h1> this is karthik  for %d </h1>' % id
+app.run(debug=True)
+
+639. Redirect & URL For
+assume we want to build a flask application which identifies who is an admin and who are the
+regular users of our website or web application and depending upon if the user is admin or just a regular
+user, we want to display different welcome messages.
+-->app1.py source
+
+640. Receiving Requests
+
+Flask job is to go ahead and accept the incoming request and give back an appropriate response.
+ what flask does is that it sort of provides requests on a global level which are actually accessible
+ to all these functions, and we don't have to manually pass in those requests to every functions which
+ it was actually important to go ahead and learn about how to receive requests inside
+ right now we have only learned how to receive a request inside a function and access the request
+ ---> source request.py
+
+ 641. Templates
+
+ Whose job is to go ahead, accept some sort of a request and give back an appropriate response.
+ The problem though, here is that all the response which we have written from any function was just in form of a plain, simple string just like that.
+---> source template.py and index.html
+
+
+642. Passing Dynamic Data To Templates
+
+information gets passed to the HTML template which we have created, and ultimately to display that
+dynamic part of information here, we could go ahead and pass it using the Jinja template here.
+-->source profile.html and template.py
+
+
+643. Conditionals In Template
+
+this particular lecture we will go ahead and learn how to use control structures in the Jinja2 template
+But jinja2 is not just limited to go ahead and pass in some information, but using the jinja2 templating
+language, we could actually go ahead and also use the conditional statements or control structures
+
+@app.route('/profile/<username>')
+def profile(username):
+    isActive=True  # this is condition
+    return render_template('profile.html',username=username, isActive=True )
+app.run(debug=True)
+
+644. Using Loops In Template
+
+651. Configuring Databases
+
+open python shell type from template import db, hit enter,
+then db.create_all() , hit enter

@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+<html>
+<head>
+</head>
+<body>
+{% block body %}
+
+    {% for book in books %}
+        <!-- Update Form -->
+        <form action="/update" method="POST">
+            <input type="hidden" name="oldname" value="{{ book.name }}">
+            <input type="text" name="newname" value="{{ book.name }}" placeholder="New Book Name">
+            <input type="text" name="newauthor" value="{{ book.author }}" placeholder="New Author Name">
+            <input type="submit" value="Update">
+        </form>
+
+        <!-- Delete Form -->
+        <form action="/delete" method="POST">
+            <input type="hidden" name="name" value="{{ book.name }}">
+            <input type="submit" value="Delete">
+        </form>
+    {% endfor %}
+
+{% endblock %}
+</body>
+</html>
+
+
+
+
+
+
+

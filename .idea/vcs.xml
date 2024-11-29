@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/QR_code" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/S38_Data_Analysis_python_Pandas" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/S41Django_Web AppsUsingPython_Django/mysite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/S42-Project 19_Todo_App_Django" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/S44Prjt20-Building_Expense Manager_Flask_Python_ChartJs/Budget" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/calculate_app_tk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/downloader_app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/psql_database" vcs="Git" />
+  </component>
+</project>
